@@ -19,11 +19,11 @@
 
     <nav>
       <ul>
-        <li class="elem-nav"><a href="#">Inicio</a></li>
-        <li class="elem-nav"><a href="#">Tipos</a></li>
+        <li class="elem-nav"><a href="#info">Inicio</a></li>
+        <li class="elem-nav"><a href="#tipos">Tipos</a></li>
         <li class="elem-nav"><a href="#">Beneficios</a></li>
         <li class="elem-nav"><a href="#">Cuidados</a></li>
-        <li class="elem-nav"><a href="#">Historia</a></li>
+        <li class="elem-nav"><a href="#historia">Historia</a></li>
       </ul>
     </nav>
 
@@ -39,7 +39,7 @@
       </div>
     </section>
 
-    <section class="frase-pagina">
+    <section class="frase-pagina" id="info">
       <article class="cita-coelho">
         <h2>“ Dios juzga al árbol por sus frutos, no por sus raíces. ”</h2>
         <p>- Paulo Coelho</p>
@@ -58,7 +58,7 @@
       </figure>
     </section>
 
-    <section class="tipos-pagina">
+    <section class="tipos-pagina" id="tipos">
       <span>
         <p class="seccion-de-pagina tipos beige">Tipos</p>
         <h2 class="beige">¿Cómo diferencias un bonsái?</h2>
@@ -112,6 +112,34 @@
       </article>
     </section>
 
+    <section class="historia-pagina" id="historia">
+      <p class="seccion-de-pagina historia">Historia</p>
+      <article class="info-historia">
+        <div>
+          <span>
+            <h2>Breve reseña histórica de los bonsáis</h2>
+            <p class="para beige">El origen del bonsái se remonta a China, hace más de 2.000 años, donde nació bajo el nombre de Penjing ("paisaje en bandeja"). Esta antigua técnica buscaba recrear escenas naturales completas con montañas, rocas y agua en recipientes pequeños, reflejando el pensamiento taoísta sobre la armonía entre el ser humano y el cosmos.</p>
+            <p class="para beige"> Siglos más tarde, la práctica llegó a Japón a través de los monjes budistas zen. Fue en tierras niponas donde el arte se refinó profundamente, pasando del Penjing al Bonsái tal como lo conocemos hoy: un enfoque minimalista centrado en la belleza individual de un solo árbol. Lo que comenzó como un pasatiempo para la aristocracia, con el tiempo se convirtió en una forma de expresión espiritual y estética que hoy trasciende fronteras.</p>
+          </span>
+          
+          <h4 class="info-enlace">Si quieres saber más, visita <a href="https://createbonsai.com/iniciacion-bonsai/historia-del-bonsai/">CreateBonsai</a></h4>
+        </div>
+        <figure>
+          <img src="media/china-bonsai.jpg" alt="Representación de la china antigua del bonsái">
+        </figure>
+      </article>
+    </section>
+
+    <section class="formulario-pagina">
+      <span>
+        <h2>¿Quiere conocer más de los bonsáis?</h2>
+        <h4>Suscríbase a nuestro Newsletter para recibir información directamente a su correo electrónico </h4>
+      </span>
+      <form action="POST">
+        <input type="email" name="email-usuario">
+        <button class="enviar-email">enviar</button>
+      </form>
+    </section>
   </main>
 
   <footer>
