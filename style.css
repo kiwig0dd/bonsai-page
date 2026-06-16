@@ -1,0 +1,114 @@
+:root {
+  --beige: #e1dbc9;
+  --verde: #2d4530;
+  --azul: #687b84;
+  --marron: #5e4b3b;
+  --gris: #3c3c3c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: var(--beige);
+}
+
+h1 {
+  font-family: "Playfair Display";
+  letter-spacing: -5px;
+  font-size: 96px;
+}
+
+h2 {
+  font-weight: 200;
+  font-family: "Playfair Display";
+  font-size: 36px;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+.nav-header nav {
+  background: var(--beige);
+  padding: 10px 50px;
+  border-radius: 10px;
+}
+.nav-header ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  gap: 80px;
+}
+.elem-nav a {
+  font-family: "Roboto Condensed";
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--gris);
+}
+
+.inicio-pagina {
+  background-image: url(media/fondo.jpg);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.titulo-pagina {
+  position: relative;
+  bottom: 18%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.titulo-pagina h1 {
+  color: var(--gris);
+}
+.saber-mas {
+  font-family: "Roboto Mono";
+  border: none;
+  background: var(--marron);
+  color: var(--beige);
+  width: 180px;
+  height: 50px;
+  font-size: 14px;
+}
+
+.frase-pagina {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cita-coelho {
+  width: 650px;
+  padding: 20px 25px;
+  background: var(--marron);
+}
+.cita-coelho h2 {
+  color: var(--beige);
+}
+.cita-coelho p {
+  font-size: 14px;
+  font-family: "Roboto Mono";
+  text-align: right;
+  color: var(--beige);
+}
+
