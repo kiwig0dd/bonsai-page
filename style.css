@@ -9,6 +9,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -22,24 +23,49 @@ h1 {
 }
 
 h2 {
-  font-weight: 200;
+  font-weight: 500;
   font-family: "Playfair Display";
   font-size: 36px;
 }
 
+h3 {
+    font-weight: 400;
+    font-size: 24px;
+    font-family: "Playfair Display";
+}
+
+h4 {
+    font-size: 16px;
+    font-family: "Playfair Display";    
+}
+
+p {
+  color: var(--gris);
+  font-family: "Roboto";
+}
+.para {
+  text-indent: 60px;
+}
+.para-reduc {
+  color: var(--beige);
+  width: 750px;
+}
 .nav-header {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 100;
   top: 0;
   width: 100%;
+  height: 60px;
   margin-top: 20px;
 }
 .nav-header nav {
   background: var(--beige);
   padding: 10px 50px;
   border-radius: 10px;
+  box-shadow: 0px 0px 10px var(--gris);
 }
 .nav-header ul {
   display: flex;
@@ -78,6 +104,7 @@ h2 {
 }
 
 .titulo-pagina h1 {
+  text-shadow: 0px 0px 10px var(--azul);
   color: var(--gris);
 }
 .saber-mas {
@@ -112,3 +139,104 @@ h2 {
   color: var(--beige);
 }
 
+.seccion-de-pagina {
+  color: var(--gris);
+  font-size: 14px;
+  font-family: "Roboto Mono";
+}
+.tipo {
+  color: var(--beige) !important;
+}
+.beige {
+  color: var(--beige) !important;
+}
+.info {
+  color: var(--verde);
+}
+.info-pagina article {
+  width: 60%;
+  height: 660px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.info-pagina article h2 {
+  color: var(--gris);
+}
+
+.mancha-arbol {
+  width: 800px;
+  position: absolute;
+  right: -200px;
+  top: 800px;
+}
+
+section:not(.inicio-pagina) {
+  padding: 0px 50px;
+}
+
+.tipos-pagina {
+  width: 100%;
+  height: 1180px;
+  background: var(--marron);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.tipos-pagina span {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+.idk {
+    color: var(--beige);
+    margin-bottom: 20px;
+}
+.tipo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+}
+.imagen-bonsai {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 400px;
+}
+.imagen-bonsai img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+footer {
+  background: var(--gris);
+  height: 178px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+.logo-pagina {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.p-footer {
+  color: var(--beige) !important;
+}
+.creditos {
+  font-family: "Roboto Condensed";
+}
+.enlace-github {
+    color: var(--beige);
+    font-family: "Roboto Mono";
+}
+.enlace-github a {
+    color: var(--beige);
+}
