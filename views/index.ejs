@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonsai</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/81fea4a1c6.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <%- include('__modalConfirmacion.ejs') %>
+
+  <header class="nav-header">
+
+    <nav>
+      <ul>
+        <li class="elem-nav"><a href="#info">Inicio</a></li>
+        <li class="elem-nav"><a href="#tipos">Tipos</a></li>
+        <li class="elem-nav"><a href="#beneficios">Beneficios</a></li>
+        <li class="elem-nav"><a href="#cuidados">Cuidados</a></li>
+        <li class="elem-nav"><a href="#historia">Historia</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <header class="dropdown">
+    <button class="dp" id="dropdown-btn" data-estado="off">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul class="dropdown-elementos" id="dropdown-elementos">
+      <li class="elem-nav"><a href="#info">Inicio</a></li>
+      <li class="elem-nav"><a href="#tipos">Tipos</a></li>
+      <li class="elem-nav"><a href="#beneficios">Beneficios</a></li>
+      <li class="elem-nav"><a href="#cuidados">Cuidados</a></li>
+      <li class="elem-nav"><a href="#historia">Historia</a></li>
+    </ul>
+  </header>
+
+  <main>
+
+    <section class="inicio-pagina">
+      <div class="titulo-pagina">
+        <span>
+          <h1>El arte del Bonsai.</h1>
+        </span>
+
+        <a class="saber-mas" href="#info">saber más</a>
+      </div>
+    </section>
+
+    <section class="frase-pagina">
+      <article class="cita-coelho">
+        <h2>“ Dios juzga al árbol por sus frutos, no por sus raíces. ”</h2>
+        <p>- Paulo Coelho</p>
+      </article>
+    </section>
+
+    <section class="info-pagina" id="info">
+      <article>
+        <p class="seccion-de-pagina info">Conócelo</p>
+        <h2>¿Qué es un bonsái?</h2>
+        <p class="para">El bonsái no es una especie de árbol enano, sino el arte de cultivar árboles en macetas limitando su crecimiento mediante técnicas controladas para mantener una forma estética y armoniosa. Esta práctica conlleva una filosofía de paciencia y meditación activa que requiere disciplina y respeto por la naturaleza, implicando técnicas fundamentales como la poda, el modelado con alambre, el trasplante y el control preciso del riego y la ubicación. En última instancia, el bonsái busca representar un paisaje en miniatura que permita al cultivador observar el paso del tiempo y las estaciones, equilibrando la conexión entre el ser humano y el mundo natural.</p>
+      </article>
+
+      <figure>
+        <img src="/images/arbol-vector.svg" class="mancha-arbol">
+      </figure>
+    </section>
+
+    <section class="tipos-pagina" id="tipos">
+
+      <span>
+        <p class="seccion-de-pagina tipos beige">Tipos</p>
+        <h2 class="beige">¿Cómo diferencias un bonsái?</h2>
+        <p class="para para-reduc beige">Para iniciarse en éste bello mundo, es fundamental diferenciar los ejemplares según su entorno y los estilos más clásicos que definen su forma.</p>
+      </span>
+
+      <h3 class="beige">Según su ubicación</h3>
+      <article class="carrusel-cont" id="carrusel-1" data-id="1">
+        <h3 id="titulo-carrusel-1">Bonsáis de Interior</h3>
+        <span class="fotos-controles">
+          <button class="control-carrusel" id="carrusel-boton-1">
+            <i class="fa-solid fa-angle-left"></i>
+          </button>
+
+          <figure class="cont-imagen-tipos">
+            <img src="/images/interior.jpg" alt="Imagen de un bonsai de interior" class="imagen-tipos" id="imagen-tipos-1">
+          </figure>
+
+          <button class="control-carrusel" id="carrusel-boton-1">
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </span>
+
+        <p class="para" id="parrafo-carrusel-1">Se identifican principalmente por ser especies de origen tropical o subtropical que, al no requerir un periodo de reposo invernal marcado por bajas temperaturas, mantienen su follaje perenne durante todo el año; para reconocerlos, busca ejemplares con hojas brillantes o texturizadas adaptadas a entornos de sombra parcial, una estructura de crecimiento rápido y vigoroso que tolera la luz tamizada de las viviendas, y la capacidad de prosperar en condiciones de humedad y temperatura estables, diferenciándose así de los árboles de exterior que, en lugar de adaptarse al ambiente doméstico, entrarían en un declive crítico al verse privados de los ciclos estacionales naturales.</p>
+      </article>
+
+      <h3 class="beige">Según su forma</h3>
+      <article class="carrusel-cont" id="carrusel-2" data-id="1">
+        <h3 id="titulo-carrusel-2">Moyogi</h3>
+        <span class="fotos-controles">
+          <button class="control-carrusel" id="carrusel-boton-2" data-valor="izq">
+            <i class="fa-solid fa-angle-left"></i>
+          </button>
+
+          <figure class="cont-imagen-tipos">
+            <img src="/images/moyogi.jpeg" alt="Imagen de un bonsái del tipo Moyogi" class="imagen-tipos" id="imagen-tipos-2">
+          </figure>
+
+          <button class="control-carrusel" id="carrusel-boton-2" data-valor="der">
+            <i class="fa-solid fa-angle-right"></i>
+          </button>
+        </span>
+
+        <p class="para" id="parrafo-carrusel-2">Se identifica visualmente por un tronco que, en lugar de crecer recto, presenta una serie de curvas pronunciadas y sinuosas que se desplazan de izquierda a derecha a lo largo de su altura, manteniendo siempre el ápice o punta del árbol alineado verticalmente sobre el centro de la base; este diseño busca emular el aspecto de un árbol que ha crecido libremente en la naturaleza enfrentando obstáculos, destacando por una distribución equilibrada de las ramas que nacen desde el exterior de cada curva, lo que genera una apariencia natural, dinámica y elegante que lo convierte en uno de los estilos más icónicos y armoniosos en el arte del bonsái.</p>
+      </article>
+    </section>
+
+    <section class="beneficios-pagina" id="beneficios">
+      <span>
+        <p class="seccion-de-pagina beige">Beneficios</p>
+        <h2 class="beige">Los beneficios que trae un bonsái no son pocos...</h2>
+        <p class="para para-reduc beige">Tener un bonsái va mucho más allá de la decoración; es una práctica que aporta beneficios tanto para tu entorno como para tu bienestar personal</p>
+      </span>
+
+      <div class="consejo">
+        <span class="consejo-top" id="div-beneficio1" data-id="1" data-estado="cerrado">
+          <h3>Reduce el estrés y fomenta la calma</h3>
+        </span>
+        <p class="para" id="para-bene1">Tener un bonsái va mucho más allá de la decoración; es una práctica que aporta beneficios tanto para tu entorno como para tu bienestar personal</p>
+      </div>
+
+      <div class="consejo">
+        <span class="consejo-top" id="div-beneficio2" data-id="2" data-estado="cerrado">
+          <h3>Conexión con el ciclo natural</h3>
+        </span>
+        <p class="para" id="para-bene2"> Al igual que otras plantas, los bonsáis ayudan a purificar el aire y a incrementar la humedad del ambiente, creando una atmósfera más fresca y saludable en el espacio donde los ubiques.</p>
+      </div>
+
+      <div class="consejo">
+        <span class="consejo-top" id="div-beneficio3" data-id="3" data-estado="cerrado">
+          <h3>Mejora el ambiente del hogar</h3>
+        </span>
+        <p class="para" id="para-bene3"> Cultivar un bonsái te obliga a observar los cambios sutiles de tu árbol según las estaciones, lo cual ayuda a desarrollar una perspectiva más paciente y consciente del paso del tiempo y de los ciclos de la vida.</p>
+      </div>
+
+      <div class="consejo">
+        <span class="consejo-top" id="div-beneficio4" data-id="4" data-estado="cerrado">
+          <h3>Estimula la creatividad y la disciplina</h3>
+        </span>
+        <p class="para" id="para-bene4"> Es un ejercicio constante de diseño y estética; aprendes a visualizar una forma, planificar el cuidado a largo plazo y ejecutar técnicas de poda con precisión, lo que potencia tanto tu capacidad artística como tu constancia.</p>
+      </div>
+
+    </section>
+
+    <section class="cuidados-pagina" id="cuidados">
+      <span>
+        <p class="seccion-de-pagina">Cuidados</p>
+        <h2>Tienes un bonsái... ¿Sabes cómo cuidarlo?</h2>
+        <p class="para para-reduc"> Cuidar un bonsái es un proceso continuo que se basa en equilibrar las necesidades básicas del árbol para mantener su salud y su forma en miniatura. Son cinco los “consejos de oro” que debes conocer para cuidarlo.</p>
+      </span>
+      <span class="consejos-cuidado">
+        <h3 class="consj uno">El riego es la clave, nunca riegues por calendario. Aprende a observar tu bonsái; toca el sustrato y riega únicamente cuando la capa superior comience a secarse. ¡La clave es la constancia, no la cantidad!</h3>
+        <h3 class="consj dos">Busca la luz, no las sombras. Aunque sea un bonsái de interior, colócalo siempre lo más cerca posible de una ventana con mucha luz natural. Un bonsái sin luz directa es un árbol que se debilita rápidamente.</h3>
+        <h3 class="consj tres">Elige el sustrato correcto. No uses tierra común de jardín. Asegúrate de que el sustrato permita un drenaje rápido para que las raíces puedan "respirar" y evitar la pudrición.</h3>
+        <h3 class="consj cuatro">Poda con propósito. La poda no es solo estética, es salud. Elimina las ramas secas o que crecen hacia el interior para permitir que la luz y el aire circulen por todo el ejemplar.</h3>
+        <h3 class="consj cinco">Paciencia estacional. Cada estación trae una tarea diferente. Infórmate sobre cuándo es la época ideal de trasplante o poda para tu especie en particular, ya que forzar estos procesos puede estresar demasiado al árbol.</h3>
+      </span>
+    </section>
+
+    <section class="historia-pagina" id="historia">
+      <p class="seccion-de-pagina historia">Historia</p>
+      <article class="info-historia">
+        <div>
+          <span>
+            <h2>Breve reseña histórica de los bonsáis</h2>
+            <p class="para beige">El origen del bonsái se remonta a China, hace más de 2.000 años, donde nació bajo el nombre de Penjing ("paisaje en bandeja"). Esta antigua técnica buscaba recrear escenas naturales completas con montañas, rocas y agua en recipientes pequeños, reflejando el pensamiento taoísta sobre la armonía entre el ser humano y el cosmos.</p>
+            <p class="para beige"> Siglos más tarde, la práctica llegó a Japón a través de los monjes budistas zen. Fue en tierras niponas donde el arte se refinó profundamente, pasando del Penjing al Bonsái tal como lo conocemos hoy: un enfoque minimalista centrado en la belleza individual de un solo árbol. Lo que comenzó como un pasatiempo para la aristocracia, con el tiempo se convirtió en una forma de expresión espiritual y estética que hoy trasciende fronteras.</p>
+          </span>
+
+          <h4 class="info-enlace">Si quieres saber más, visita <a href="https://createbonsai.com/iniciacion-bonsai/historia-del-bonsai/">CreateBonsai</a></h4>
+        </div>
+        <figure>
+          <img src="/images/china-bonsai.jpg" alt="Representación de la china antigua del bonsái">
+        </figure>
+      </article>
+    </section>
+
+    <section class="formulario-pagina">
+      <span>
+        <h2>¿Tiene algún comentario? ¡Por favor, háganoslo saber!</h2>
+      </span>
+      <form id="formulario">
+        <label for="nombre-usuario">Su nombre</label>
+        <input type="text" name="nombre-usuario" id="nombre-usuario" placeholder="Por favor, díganos su nombre" required>
+
+        <label for="email-usuario">Su correo:</label>
+        <input type="email" name="email-usuario" id="email-usuario" placeholder="¿Cuál es su correo electrónico?" required>
+
+        <textarea name="opinion-usuario" id="opinion-usuario" placeholder="Escriba aquí su opinión de los bonsái..." maxlength="800" required></textarea>
+        <p class="contador-carac">Caracteres restantes: <strong><span id="contador">800</span>/800</strong></p>
+        <div class="btn-news">
+          <span>
+            <p>Quiero recibir información sobre bonsáis</p>
+            <input type="checkbox" name="newsletter" class="input-no" id="newsletter">
+          </span>
+          <button class="enviar-email" id="enviar-email">
+            enviar
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <span class="logo-pagina">
+      <img src="/images/logo-texto.svg">
+      <p class="p-footer creditos">Diseñado por: José Godoy V-32.006.867</p>
+    </span>
+    <span>
+      <p class="p-footer enlace-github">Visite el <a href="https://github.com/kiwig0dd/bonsai-page">Repo de GitHub</a></p>
+    </span>
+  </footer>
+
+  <script src="/javascripts/script.js"></script>
+</body>
+
+</html>

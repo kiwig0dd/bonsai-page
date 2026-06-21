@@ -50,13 +50,15 @@ botones1.forEach((boton) => {
       carruselTituloUbicacion.textContent = "Bonsáis de Exterior";
       carruselParrafoUbicacion.textContent =
         "Se identifican principalmente por ser especies adaptadas a climas templados que requieren imperativamente la exposición directa a los ciclos estacionales, incluyendo un periodo de reposo invernal con temperaturas frescas para regular su metabolismo; se reconocen por presentar un follaje que suele caducar o cambiar de color según la estación, una corteza rugosa y madura que refleja el paso del tiempo, y una estructura adaptada a la plena radiación solar y a la ventilación constante, lo que los hace biológicamente incompatibles con el entorno doméstico, ya que en un interior cerrarían su ciclo vital prematuramente al carecer de los cambios de luz y temperatura necesarios para su supervivencia a largo plazo.";
-      carruselImagenUbicacion.src = "media/exterior.jpg";
+      carruselImagenUbicacion.src = "/images/exterior.jpg";
+      carruselImagenUbicacion.alt = "Imagen de un bonsai de exterior";
       return (carruselContenedorUbicacion.dataset.id = 2);
     }
     carruselTituloUbicacion.textContent = "Bonsáis de Interior";
     carruselParrafoUbicacion.textContent =
       "Se identifican principalmente por ser especies de origen tropical o subtropical que, al no requerir un periodo de reposo invernal marcado por bajas temperaturas, mantienen su follaje perenne durante todo el año; para reconocerlos, busca ejemplares con hojas brillantes o texturizadas adaptadas a entornos de sombra parcial, una estructura de crecimiento rápido y vigoroso que tolera la luz tamizada de las viviendas, y la capacidad de prosperar en condiciones de humedad y temperatura estables, diferenciándose así de los árboles de exterior que, en lugar de adaptarse al ambiente doméstico, entrarían en un declive crítico al verse privados de los ciclos estacionales naturales.";
-    carruselImagenUbicacion.src = "media/interior.jpg";
+    carruselImagenUbicacion.src = "/images/interior.jpg";
+    carruselImagenUbicacion.alt = "Imagen de un bonsai de interior";
     return (carruselContenedorUbicacion.dataset.id = 1);
   });
 });
@@ -73,19 +75,22 @@ const carruselObjetos2 = [
     titulo: "Moyogi",
     parrafo:
       "Se identifica visualmente por un tronco que, en lugar de crecer recto, presenta una serie de curvas pronunciadas y sinuosas que se desplazan de izquierda a derecha a lo largo de su altura, manteniendo siempre el ápice o punta del árbol alineado verticalmente sobre el centro de la base; este diseño busca emular el aspecto de un árbol que ha crecido libremente en la naturaleza enfrentando obstáculos, destacando por una distribución equilibrada de las ramas que nacen desde el exterior de cada curva, lo que genera una apariencia natural, dinámica y elegante que lo convierte en uno de los estilos más icónicos y armoniosos en el arte del bonsái.",
-    imagen: "media/moyogi.jpeg",
+    imagen: "/images/moyogi.jpeg",
+    alt: "Imagen de un bonsái de tipo Moyogi",
   },
   {
     titulo: "Chokkan",
     parrafo:
       "Se identifica por un tronco perfectamente recto y vertical que disminuye gradualmente su grosor desde una base ancha y poderosa hacia el ápice, proyectando una imagen de gran dignidad, estabilidad y calma; su diseño se caracteriza por una disposición simétrica y ordenada de las ramas, las cuales se distribuyen de forma alterna y bien espaciada comenzando desde el tercio inferior del tronco, creando una silueta cónica equilibrada que emula a un árbol que ha crecido en un entorno ideal, libre de competencia o adversidades ambientales, convirtiéndolo en la máxima expresión de elegancia clásica y rigor técnico dentro del arte del bonsái.",
-    imagen: "media/chokkan.png",
+    imagen: "/images/chokkan.png",
+    alt: "Imagen de un bonsái de tipo Chokkan",
   },
   {
     titulo: "Kengai",
     parrafo:
       "Se identifica por un tronco que se inclina decididamente hacia abajo, superando el borde de la maceta y descendiendo por debajo de la base del contenedor, emulando la figura de un árbol que crece en una ladera escarpada o colgado de un acantilado bajo la influencia constante de elementos como la gravedad, el viento o la nieve; este diseño destaca por una estructura donde la rama principal se proyecta con fuerza hacia el vacío mientras el ápice busca corregirse hacia arriba para mantener la vitalidad y el equilibrio visual, creando una composición dramática y contundente que representa la lucha por la supervivencia en entornos naturales extremadamente hostiles.",
-    imagen: "media/kengai.jpg",
+    imagen: "/images/kengai.jpg",
+    alt: "Imagen de un bonsái de tipo Kengai",
   },
 ];
 
@@ -108,4 +113,44 @@ const actualizarCarrusel = () => {
   carruselTituloForma.textContent = info.titulo;
   carruselParrafoForma.textContent = info.parrafo;
   carruselImagenForma.src = info.imagen;
-}
+  carruselImagenForma.alt = info.alt;
+};
+
+const formulario = document.getElementById("formulario");
+
+formulario.addEventListener("submit", async (event) => {
+  event.preventDefault(); // <--- ESTO ES LO QUE DETIENE LA RECARGA
+  await enviarData();
+});
+
+const confirmacionModal = document.getElementById("confirmacion-modal");
+
+const enviarData = async () => {
+  const checkbox = document.getElementById("newsletter");
+
+  const dataEnviada = {
+    nombre_usuario: document.getElementById("nombre-usuario").value,
+    correo_usuario: document.getElementById("email-usuario").value,
+    comentario: document.getElementById("opinion-usuario").value,
+    newsletter: checkbox.checked,
+  };
+
+  try {
+    const respuesta = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dataEnviada),
+    });
+
+    const json = await respuesta.json();
+    if (respuesta.ok) {
+      confirmacionModal.style.display = "flex";
+      setTimeout(() => {
+        confirmacionModal.style.display = "none";
+      }, 2000);
+    }
+    formulario.reset();
+  } catch (err) {
+    return console.error(`Ha ocurrido un error: ${err}`);
+  }
+};

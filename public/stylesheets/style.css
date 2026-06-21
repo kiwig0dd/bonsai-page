@@ -11,6 +11,8 @@
   margin: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow-wrap: break-word;
+  scrollbar-width: thin;
 }
 
 body {
@@ -89,7 +91,7 @@ p {
 }
 
 .inicio-pagina {
-  background-image: url(media/fondo.jpg);
+  background-image: url(/images/fondo.jpg);
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -189,6 +191,7 @@ p {
   right: -200px;
   position: absolute;
   z-index: -1;
+  opacity: 10%;
 }
 
 section:not(.inicio-pagina) {
@@ -300,7 +303,7 @@ section:not(.inicio-pagina) {
 }
 
 .icono-flecha {
- padding: 5px; 
+  padding: 5px;
 }
 .consejo .para {
   display: none;
@@ -394,16 +397,18 @@ textarea {
   resize: none;
 }
 input[type="checkbox"] {
-  height: 20px;
-  width: 20px;
+  min-height: 15px;
+  min-width: 15px;
 }
 .contador-carac {
   text-align: right;
   width: 100%;
 }
 .enviar-email {
-  width: 120px;
-  height: 42px;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 14px;
   font-family: "Roboto Mono";
   border: none;
@@ -418,13 +423,14 @@ input[type="checkbox"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
-  width: 500px;
+  gap: 20px;
 }
 .btn-news span {
   display: flex;
   justify-content: space-between;
+  gap: 5px;
   align-items: center;
+  width: 60%;
 }
 img {
   border-radius: 5px;
@@ -481,7 +487,7 @@ footer {
 }
 #dropdown-btn:hover {
   cursor: pointer;
-} 
+}
 
 .carrusel-cont {
   display: flex;
@@ -502,7 +508,6 @@ footer {
   height: 100%;
   object-fit: cover;
 }
-
 
 @media only screen and (max-width: 800px) {
   .cita-coelho {
@@ -618,4 +623,24 @@ footer {
   .btn-news {
     width: 100%;
   }
+}
+
+.container-modal {
+  width: 100dvw;
+  height: 100dvh;
+  position: fixed;
+  background: #3c3c3c44;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.container-modal span {
+  position: absolute;
+  z-index: 1001;
+  width: 100%;
+  background: var(--beige);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px var(--gris);
 }
